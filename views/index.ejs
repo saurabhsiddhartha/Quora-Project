@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>All Posts</title>
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <% for( post of result ) { %>
+        <div class="post" style="position: relative;">
+            <h3 class="user">@<%=post.username%></h3>
+            <h4><%=post.post%></h4>
+            <a href="http://localhost:8080/posts/<%=post.id%>">details</a>
+            <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
+            <form method="get" action="/posts/<%=post.id%>/delete">
+                <button>Delete</button>
+            </form>
+            <form method="post" action="/posts/<%= post.id %>/upvote">
+            <button class="upvote-btn"  style="position: absolute; bottom: 10px; right: 90px;">Upvote</button>
+            <span class="upvote-count" style="position: absolute; bottom: 10px; right: 10px;">Upvotes: <%=post.upvote%></span>
+            </form>
+            <form method="post" action="/posts/<%= post.id %>/downvote">
+            <button class="downvote-btn"  style="position: absolute; bottom: 10px; right: 270px;">Downvote</button>
+            <span class="downvote-count" style="position: absolute; bottom: 10px; right: 160px;">Downvotes: <%=post.downvote%></span>
+            </form>
+        </div>                
+    <% } %>
+    <br>
+    <br>
+    <a href="http://localhost:8080/posts/new">Creat New Post </a>
+    <script src="/script.js"></script>
+</body>
+</html>

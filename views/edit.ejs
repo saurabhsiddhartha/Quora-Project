@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/formStyle.css">
+    <title>Edit Post</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Edit your post</h2>
+    <p>Post id : <%=user.id%></p>
+    <p>Post username : <%=user.username%></p>
+    <form method="post" action="/posts/<%=user.id%>?_method=PATCH">
+        <label for="password">Password : </label>
+        <input type="password" name="password" placeholder="Enter password" id="password"><br><br>
+        <textarea name="content" id="" cols="30" rows="10"><%= user.post %></textarea><br>
+        <button>Submit</button>
+    </form>
+    </div>
+</body>
+</html>

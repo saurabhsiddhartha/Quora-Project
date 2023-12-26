@@ -1,0 +1,41 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: maroon;
+}
+
+.post-id {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.post-detail {
+    background-color: blanchedalmond;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.user {
+    margin: 0;
+}
+
+.post-content {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .post-detail {
+        padding: 10px;
+    }
+}
